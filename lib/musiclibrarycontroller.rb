@@ -51,7 +51,7 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    user_input = gets
+    user_input = gets.strip
     artist = Artist.find_by_name(user_input)
     artist == nil ? nil :
       artist.songs.sort_by {|songs|songs.name}.each_with_index{|song,index|
